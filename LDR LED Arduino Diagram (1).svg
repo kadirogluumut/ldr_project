@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="950" viewBox="0 0 1500 950">
+  <defs>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .title { font: 700 38px Arial, Helvetica, sans-serif; fill: #172033; }
+      .subtitle { font: 600 20px Arial, Helvetica, sans-serif; fill: #475569; }
+      .label { font: 700 22px Arial, Helvetica, sans-serif; fill: #172033; }
+      .small { font: 600 17px Arial, Helvetica, sans-serif; fill: #172033; }
+      .tiny { font: 600 14px Arial, Helvetica, sans-serif; fill: #172033; }
+      .note { font: 600 16px Arial, Helvetica, sans-serif; fill: #334155; }
+      .arduino { fill: #1d8a6d; stroke: #0b4e3d; stroke-width: 5; }
+      .chip { fill: #145544; stroke: #08392d; stroke-width: 3; }
+      .usb { fill: #d5dbe3; stroke: #707985; stroke-width: 3; }
+      .bread { fill: #ffffff; stroke: #b8c4d2; stroke-width: 4; }
+      .rail-red { fill: #fce8e6; stroke: #d8342a; stroke-width: 2; }
+      .rail-blue { fill: #e6f0fc; stroke: #1f77d0; stroke-width: 2; }
+      .pin { fill: #f5c542; stroke: #8c6b00; stroke-width: 2; }
+      .hole { fill: #d8e0ea; stroke: #9aa6b5; stroke-width: 1; }
+      .wire-red { stroke: #d8342a; stroke-width: 7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .wire-black { stroke: #222831; stroke-width: 7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .wire-blue { stroke: #1f77d0; stroke-width: 7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .wire-orange { stroke: #f08a24; stroke-width: 7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .ldr-body { fill: #e2b84b; stroke: #7c5b12; stroke-width: 4; }
+      .ldr-line { stroke: #5f4310; stroke-width: 5; stroke-linecap: round; }
+      .resistor { fill: #e9c46a; stroke: #775415; stroke-width: 3; }
+      .led { fill: #ffe45c; stroke: #b45309; stroke-width: 4; }
+      .led-off { fill: #806f28; stroke: #4b3b0c; stroke-width: 4; }
+      .leg { stroke: #5d6673; stroke-width: 5; stroke-linecap: round; }
+      .callout { fill: #ffffff; stroke: #c9d4e1; stroke-width: 3; }
+      .shadow { fill: #253041; opacity: 0.85; }
+      .sun { fill: #ffd166; stroke: #f59e0b; stroke-width: 4; }
+      .ray { stroke: #f59e0b; stroke-width: 5; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1500" height="950"/>
+  <text x="750" y="55" text-anchor="middle" class="title">LDR Sensor with LED Arduino Diagram</text>
+  <text x="750" y="88" text-anchor="middle" class="subtitle">No shadow / bright light: LED ON • Shadow / dark: LED OFF</text>
+
+  <!-- Arduino -->
+  <g id="arduino">
+    <rect x="505" y="145" width="360" height="620" rx="24" class="arduino"/>
+    <text x="685" y="198" text-anchor="middle" font-family="Arial" font-size="36" font-weight="700" fill="#ffffff">ARDUINO UNO</text>
+    <rect x="595" y="270" width="180" height="100" rx="10" class="chip"/>
+    <text x="685" y="326" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#ffffff">ATmega328P</text>
+    <rect x="612" y="670" width="145" height="58" rx="8" class="usb"/>
+    <text x="685" y="706" text-anchor="middle" class="label">USB</text>
+
+    <text x="465" y="250" text-anchor="end" class="label">POWER / ANALOG</text>
+    <circle cx="505" cy="295" r="11" class="pin"/><text x="475" y="301" text-anchor="end" class="small">5V</text>
+    <circle cx="505" cy="345" r="11" class="pin"/><text x="475" y="351" text-anchor="end" class="small">GND</text>
+    <circle cx="505" cy="430" r="11" class="pin"/><text x="475" y="436" text-anchor="end" class="small">A0</text>
+
+    <text x="905" y="250" class="label">DIGITAL</text>
+    <circle cx="865" cy="330" r="11" class="pin"/><text x="895" y="336" class="small">D9 - LED</text>
+    <circle cx="865" cy="565" r="11" class="pin"/><text x="895" y="571" class="small">GND</text>
+  </g>
+
+  <!-- Breadboard -->
+  <g id="breadboard">
+    <rect x="975" y="150" width="400" height="620" rx="22" class="bread"/>
+    <text x="1175" y="202" text-anchor="middle" class="label">BREADBOARD</text>
+    <rect x="1010" y="235" width="330" height="36" rx="8" class="rail-red"/>
+    <rect x="1010" y="695" width="330" height="36" rx="8" class="rail-blue"/>
+    <text x="1025" y="258" class="small" fill="#d8342a">+ 5V rail</text>
+    <text x="1025" y="719" class="small" fill="#1f77d0">- GND rail</text>
+
+    <!-- breadboard holes -->
+    <g opacity="0.9">
+      <circle cx="1035" cy="315" r="5" class="hole"/><circle cx="1070" cy="315" r="5" class="hole"/><circle cx="1105" cy="315" r="5" class="hole"/><circle cx="1140" cy="315" r="5" class="hole"/><circle cx="1175" cy="315" r="5" class="hole"/><circle cx="1210" cy="315" r="5" class="hole"/><circle cx="1245" cy="315" r="5" class="hole"/><circle cx="1280" cy="315" r="5" class="hole"/>
+      <circle cx="1035" cy="390" r="5" class="hole"/><circle cx="1070" cy="390" r="5" class="hole"/><circle cx="1105" cy="390" r="5" class="hole"/><circle cx="1140" cy="390" r="5" class="hole"/><circle cx="1175" cy="390" r="5" class="hole"/><circle cx="1210" cy="390" r="5" class="hole"/><circle cx="1245" cy="390" r="5" class="hole"/><circle cx="1280" cy="390" r="5" class="hole"/>
+      <circle cx="1035" cy="465" r="5" class="hole"/><circle cx="1070" cy="465" r="5" class="hole"/><circle cx="1105" cy="465" r="5" class="hole"/><circle cx="1140" cy="465" r="5" class="hole"/><circle cx="1175" cy="465" r="5" class="hole"/><circle cx="1210" cy="465" r="5" class="hole"/><circle cx="1245" cy="465" r="5" class="hole"/><circle cx="1280" cy="465" r="5" class="hole"/>
+      <circle cx="1035" cy="540" r="5" class="hole"/><circle cx="1070" cy="540" r="5" class="hole"/><circle cx="1105" cy="540" r="5" class="hole"/><circle cx="1140" cy="540" r="5" class="hole"/><circle cx="1175" cy="540" r="5" class="hole"/><circle cx="1210" cy="540" r="5" class="hole"/><circle cx="1245" cy="540" r="5" class="hole"/><circle cx="1280" cy="540" r="5" class="hole"/>
+    </g>
+
+    <!-- LDR voltage divider -->
+    <text x="1035" y="310" class="label">LDR</text>
+    <circle cx="1085" cy="375" r="38" class="ldr-body"/>
+    <line x1="1062" y1="358" x2="1108" y2="358" class="ldr-line"/>
+    <line x1="1060" y1="375" x2="1110" y2="375" class="ldr-line"/>
+    <line x1="1062" y1="392" x2="1108" y2="392" class="ldr-line"/>
+    <line x1="1085" y1="337" x2="1085" y2="270" class="leg"/>
+    <line x1="1085" y1="413" x2="1085" y2="470" class="leg"/>
+    <circle cx="1085" cy="470" r="9" fill="#1f77d0"/>
+    <text x="1110" y="475" class="tiny">A0 signal point</text>
+
+    <rect x="1040" y="505" width="90" height="24" rx="5" class="resistor"/>
+    <line x1="1085" y1="470" x2="1085" y2="505" class="leg"/>
+    <line x1="1085" y1="529" x2="1085" y2="695" class="leg"/>
+    <line x1="1058" y1="505" x2="1058" y2="529" stroke="#8b4513" stroke-width="4"/>
+    <line x1="1082" y1="505" x2="1082" y2="529" stroke="#111827" stroke-width="4"/>
+    <line x1="1106" y1="505" x2="1106" y2="529" stroke="#f97316" stroke-width="4"/>
+    <text x="1148" y="523" class="small">10K resistor</text>
+    <text x="1148" y="548" class="tiny">needed for LDR reading</text>
+
+    <!-- LED and resistor -->
+    <text x="1220" y="310" class="label">LED</text>
+    <circle cx="1255" cy="380" r="30" class="led"/>
+    <path d="M1224 332 L1204 302 M1240 326 L1220 296" class="ray"/>
+    <line x1="1255" y1="410" x2="1255" y2="450" class="leg"/>
+    <line x1="1295" y1="410" x2="1295" y2="480" class="leg"/>
+    <text x="1298" y="386" class="tiny">long leg (+)</text>
+    <text x="1298" y="458" class="tiny">short leg (-)</text>
+    <rect x="1210" y="500" width="95" height="24" rx="5" class="resistor"/>
+    <line x1="1295" y1="480" x2="1295" y2="500" class="leg"/>
+    <line x1="1295" y1="524" x2="1295" y2="695" class="leg"/>
+    <line x1="1228" y1="500" x2="1228" y2="524" stroke="#8b4513" stroke-width="4"/>
+    <line x1="1252" y1="500" x2="1252" y2="524" stroke="#111827" stroke-width="4"/>
+    <line x1="1276" y1="500" x2="1276" y2="524" stroke="#8b4513" stroke-width="4"/>
+    <line x1="1296" y1="500" x2="1296" y2="524" stroke="#d4af37" stroke-width="4"/>
+    <text x="1168" y="520" text-anchor="end" class="small">220 ohm</text>
+  </g>
+
+  <!-- Wiring -->
+  <path d="M505 295 C640 295, 850 252, 1010 252" class="wire-red"/>
+  <path d="M505 345 C640 345, 850 715, 1010 715" class="wire-black"/>
+  <path d="M505 430 C660 430, 880 470, 1085 470" class="wire-blue"/>
+  <path d="M865 330 C940 330, 1030 380, 1255 380" class="wire-orange"/>
+  <path d="M865 565 C955 565, 1030 715, 1010 715" class="wire-black"/>
+
+  <!-- Light and shadow explanation -->
+  <g>
+    <circle cx="195" cy="240" r="46" class="sun"/>
+    <line x1="195" y1="160" x2="195" y2="125" class="ray"/>
+    <line x1="195" y1="355" x2="195" y2="320" class="ray"/>
+    <line x1="115" y1="240" x2="80" y2="240" class="ray"/>
+    <line x1="310" y1="240" x2="275" y2="240" class="ray"/>
+    <line x1="138" y1="183" x2="113" y2="158" class="ray"/>
+    <line x1="252" y1="183" x2="277" y2="158" class="ray"/>
+    <line x1="138" y1="297" x2="113" y2="322" class="ray"/>
+    <line x1="252" y1="297" x2="277" y2="322" class="ray"/>
+    <text x="195" y="420" text-anchor="middle" class="label">No Shadow</text>
+    <text x="195" y="450" text-anchor="middle" class="small">LDR gets light</text>
+    <text x="195" y="480" text-anchor="middle" class="small">LED turns ON</text>
+
+    <rect x="285" y="175" width="135" height="130" rx="14" class="shadow"/>
+    <text x="352" y="245" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="#ffffff">SHADOW</text>
+    <text x="352" y="420" text-anchor="middle" class="label">Shadow</text>
+    <text x="352" y="450" text-anchor="middle" class="small">LDR gets less light</text>
+    <text x="352" y="480" text-anchor="middle" class="small">LED turns OFF</text>
+  </g>
+
+  <!-- Notes -->
+  <rect x="85" y="800" width="1290" height="95" rx="14" class="callout"/>
+  <text x="115" y="835" class="label">Connection Summary</text>
+  <text x="115" y="868" class="note">LDR: one leg to 5V, other leg to A0. Add a 10K resistor from A0 to GND.</text>
+  <text x="760" y="868" class="note">LED: D9 to LED long leg (+), LED short leg (-) to 220 ohm resistor, then GND.</text>
+</svg>
